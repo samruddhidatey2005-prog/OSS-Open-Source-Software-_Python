@@ -3,7 +3,7 @@
 echo "=========================================="
 echo "       OPEN SOURCE AUDIT REPORT"
 echo "=========================================="
-echo "Student Name: Sneha Singh"
+echo "Student Name: "Samruddhi Datey"
 echo "Audit Subject: Linux Kernel"
 echo "Kernel Version: $(uname -r)"
 echo "Distribution: $(lsb_release -d | cut -f2)"
