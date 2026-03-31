@@ -1,12 +1,29 @@
 #!/bin/bash
 # Script 1: System Identity Report
-echo "=========================================="
-echo "       OPEN SOURCE AUDIT REPORT"
-echo "=========================================="
-echo "Student Name: "Samruddhi Datey"
-echo "Audit Subject: Linux Kernel"
-echo "Kernel Version: $(uname -r)"
-echo "Distribution: $(lsb_release -d | cut -f2)"
-echo "License: GNU GPL v2"
-echo "Date: $(date)"
-echo "=========================================="
+# Author: Samruddhi | Course: Open Source Software
+
+# --- Variables ---
+STUDENT_NAME="Samruddhi"
+SOFTWARE_CHOICE="Python"
+
+# --- System info ---
+KERNEL=$(uname -r)
+USER_NAME=$(whoami)
+HOME_DIR=$HOME
+UPTIME=$(uptime -p)
+DATE=$(date)
+DISTRO=$(lsb_release -d 2>/dev/null | cut -f2)
+
+# --- Display ---
+echo "======================================"
+echo " Open Source Audit — $STUDENT_NAME"
+echo "======================================"
+echo "Software : $SOFTWARE_CHOICE"
+echo "Distro   : $DISTRO"
+echo "Kernel   : $KERNEL"
+echo "User     : $USER_NAME"
+echo "Home Dir : $HOME_DIR"
+echo "Uptime   : $UPTIME"
+echo "Date     : $DATE"
+echo "License  : Linux is typically licensed under GPL"
+echo "======================================"
