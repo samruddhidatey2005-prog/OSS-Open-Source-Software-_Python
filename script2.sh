@@ -1,11 +1,31 @@
 #!/bin/bash
 # Script 2: FOSS Package Inspector
-PACKAGE="grep"
-echo "Inspecting Package: $PACKAGE"
-if dpkg -s $PACKAGE > /dev/null 2>&1; then
-    echo "Status: Installed"
-    dpkg -s $PACKAGE | grep -E 'Version|License|Section'
-    echo "Philosophy Note: This tool follows the Unix philosophy of 'doing one thing well'."
+
+PACKAGE="python3"
+
+# Check if installed
+if dpkg -l | grep -q $PACKAGE; then
+    echo "$PACKAGE is installed."
+    dpkg -l | grep $PACKAGE
 else
-    echo "Package $PACKAGE not found."
+    echo "$PACKAGE is NOT installed."
 fi
+
+# Case statement
+case $PACKAGE in
+    python3)
+        echo "Python: a powerful open-source programming language"
+        ;;
+    git)
+        echo "Git: version control system for developers"
+        ;;
+    vlc)
+        echo "VLC: plays almost all media formats"
+        ;;
+    firefox)
+        echo "Firefox: open-source web browser"
+        ;;
+    *)
+        echo "Unknown package"
+        ;;
+esac
